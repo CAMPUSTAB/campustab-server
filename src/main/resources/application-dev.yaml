@@ -3,3 +3,19 @@ spring:
         url: jdbc:postgresql://localhost:5432/${DB_NAME}
         username: ${DB_USER}
         password: ${DB_PASSWORD}
+    data:
+        redis:
+            host: localhost
+            port: 6379
+            password: ${REDIS_PASSWORD:-campustab_redis_secure_pass!}
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+    flyway:
+        enabled: true
+        baseline-on-migrate: true
