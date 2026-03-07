@@ -4,6 +4,7 @@ import com.campustab.global.domain.BaseTimeEntity;
 import com.campustab.feed.domain.Feed;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,4 +24,10 @@ public class Bookmark extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
+
+    @Builder
+    public Bookmark(User user, Feed feed) {
+        this.user = user;
+        this.feed = feed;
+    }
 }

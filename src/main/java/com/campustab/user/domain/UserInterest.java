@@ -23,4 +23,10 @@ public class UserInterest extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "topic_id", nullable = false)
     private Topic topic;
+
+    @lombok.Builder
+    public UserInterest(User user, Topic topic) {
+        this.user = user;
+        this.topic = topic;
+    }
 }

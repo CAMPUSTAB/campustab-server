@@ -37,4 +37,9 @@ public class User extends BaseTimeEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private Department department;
+
+    public void updateUniversityAndDepartment(University university, Department department) {
+        this.university = university;
+        this.department = department;
+    }
 }

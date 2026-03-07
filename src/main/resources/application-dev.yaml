@@ -19,3 +19,7 @@ spring:
     flyway:
         enabled: true
         baseline-on-migrate: true
+    cloud:
+        gcp:
+            storage:
+                enabled: false

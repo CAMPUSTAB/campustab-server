@@ -14,12 +14,10 @@ spring:
     access-token-expiration: ${JWT_ACCESS_EXPIRATION}
     refresh-token-expiration: ${JWT_REFRESH_EXPIRATION}
 
-#  cloud:
-#    aws:
-#      credentials:
-#        access-key: ${AWS_ACCESS_KEY}
-#        secret-key: ${AWS_SECRET_KEY}
-#      region:
-#        static: ${AWS_REGION}
-#      s3:
-#        bucket: ${AWS_S3_BUCKET}
+  cloud:
+    gcp:
+      project-id: ${GCP_PROJECT_ID:}
+      storage:
+        credentials:
+          location: file:${GOOGLE_APPLICATION_CREDENTIALS:}
+        bucket: ${GCP_BUCKET_NAME:}
